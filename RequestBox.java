@@ -7,7 +7,7 @@ public class RequestBox{
 	//Location l;
 	//String name; 
 	//DisplayBox b;
-	
+	//lilin
 	
 	/*public RequestBox(Profile prof, RRequest req ){
 		
