@@ -8,7 +8,7 @@ public class Recipe {
 		
 				
 	}
-	
+	//new comment David Staples
 	public void setName(String name) throws Exception {
 		if(name.length()>10)
 		{
