@@ -3,7 +3,7 @@ public class RequestBox{
 	boolean accepted;
 
 	//Rik sherman
-	
+	//DAvid Staples
 	//Location l;
 	//String name; 
 	//DisplayBox b;
