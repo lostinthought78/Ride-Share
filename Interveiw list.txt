@@ -1,0 +1,10 @@
+ideas from interviews:
+
+	1. long distance sharing
+	2  schedueled meetings
+	3. interest list 
+	4. driving record.
+	5. friendslist/favorites
+	6. specific driver request
+	7. real time driver location
+	8. blacklist
