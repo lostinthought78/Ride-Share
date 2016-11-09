@@ -1,0 +1,27 @@
+490 Use Cases
+
+1.As a nonsmoker, I would like to filter out smoking drivers so that I can avoid health issues. r=2
+
+2.As a driver I would Like information on the person being picked up so that I may feel more confident in picking up a passenger. r=2
+
+3.As a  passenger, I would like to read reviews about a driver, so that I may  feel safe about their driving abilities. r=2
+
+4.As someone who travels with others, I want there is enough room for my companions, so that I know that none of my friends will be left behind. r=2
+
+5.As a traveler I want to make sure that the driver will have enough room for my luggage, so I don’t have to worry about my stuff. r=2
+
+6.As a dog loving passenger I want to ride with drivers who would accommodate my pet so there won’t be any confrontation about him. r=2
+
+7.As a female passenger, I would like to choose to only ride with other females so that I may feel safer while riding. r=2
+
+8.As a weary driver , I would like to be able to decline someones request for a ride so that I can ensure I only take passengers I want to ride with. r=2
+
+9.As a worried passenger. I would like to be able to message the person I will be riding with for specific details,so that we may avoid any confusion. r=2
+
+10.	As  a driver/passenger I would like to make sure that I only request rides from people within a mile of my location so that I won’t be late to my destination, and they won’t go out of their way. r=2
+
+11.	As a busy passenger, I would like to set a time of departure, so that a driver will be ready for me at aspecific time, as to not  dilly dally. r=2
+
+1, 5, and 6 made into 1 use case
+Brad # 1, 5, 6
+David Staples # 2 & 9
