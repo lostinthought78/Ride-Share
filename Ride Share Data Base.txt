@@ -1,0 +1,25 @@
+Database commands
+
+create database rideShare;
+
+use rideShare;
+
+create table driver (
+id int not null auto_increment, 
+fName varchar (50),
+lName varchar (50),
+smoker boolean, 
+gender binary,
+
+primary key(id)
+);
+
+create table passanger (
+id int not null auto_increment, 
+fName varchar (50),
+lName varchar (50),
+smoker boolean, 
+gender binary,
+
+primary key(id)
+);
