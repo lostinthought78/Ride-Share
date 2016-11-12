@@ -9,7 +9,7 @@ uName varchar (50) not null unique,
 fName varchar (50) not null,
 lName varchar (50) not null,
 smoker boolean, 
-gender binary,
+gender binary not null,
 pet binary,
 cargo binary,
 
@@ -21,7 +21,7 @@ uName varchar (50) not null unique,
 fName varchar (50) not null,
 lName varchar (50) not null,
 smoker boolean, 
-gender binary,
+gender binary not null,
 
 primary key(uName)
 );
