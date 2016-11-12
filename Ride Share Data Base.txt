@@ -5,21 +5,23 @@ create database rideShare;
 use rideShare;
 
 create table driver (
-id int not null auto_increment, 
-fName varchar (50),
-lName varchar (50),
+uName varchar (50) not null unique, 
+fName varchar (50) not null,
+lName varchar (50) not null,
 smoker boolean, 
 gender binary,
+pet binary,
+cargo binary,
 
-primary key(id)
+primary key(uName)
 );
 
 create table passanger (
-id int not null auto_increment, 
-fName varchar (50),
-lName varchar (50),
+uName varchar (50) not null unique, 
+fName varchar (50) not null,
+lName varchar (50) not null,
 smoker boolean, 
 gender binary,
 
-primary key(id)
+primary key(uName)
 );
