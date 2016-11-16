@@ -8,8 +8,10 @@ create table driver (
 uName varchar (50) not null unique, 
 fName varchar (50) not null,
 lName varchar (50) not null,
-smoker boolean, 
+smoker boolean not null, 
 gender binary not null,
+carColor varchar (20) not null,
+carMake varchar (50) not null,
 pet binary,
 cargo binary,
 
