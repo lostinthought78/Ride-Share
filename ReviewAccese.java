@@ -20,7 +20,7 @@ public class ReviewAccese {
 		Scanner in = new Scanner(System.in);
 		System.out.println("Please type in the username you want to see the review ");
 		String userName = in.nextLine();
-		
+		reviewSearch(String userName);
 	}
 	
 	
