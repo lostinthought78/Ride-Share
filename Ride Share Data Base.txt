@@ -10,6 +10,8 @@ fName varchar (50) not null,
 lName varchar (50) not null,
 smoker boolean not null, 
 gender binary not null,
+email email not null.
+password password not null.
 carColor varchar (20) not null,
 carMake varchar (50) not null,
 pet binary,
@@ -24,6 +26,8 @@ fName varchar (50) not null,
 lName varchar (50) not null,
 smoker boolean, 
 gender binary not null,
+email email not null.
+password password not null.
 
 primary key(uName)
 );
