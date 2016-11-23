@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <title>filters</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        
+        <script>
+        $(document).ready( function (){
+                $("#btnSetfilter").click(function(){
+                    alert("clicked");
+					
+					
+					if ($('#' + "smoke").is(":checked")){
+					 
+						var smoke=document.getElementById("smoke").value;}
+						
+					else{
+							var smoke=0;
+					}
+					
+					
+					if ($('#' + "space").is(":checked")){
+					 
+						var space=document.getElementById("space").value;}
+						
+					else{
+							var space=0;
+					}
+					
+					
+					if ($('#' + "pet").is(":checked")){
+					 
+						var pet=document.getElementById("pet").value;}
+						
+					else{
+							var pet=0;
+					}
+					
+				var gender= $(":radio[name=gender]:checked").val();
+					
+					
+					
+		
+					
+					
+					
+                    
+                    
+                    var theData="smoke="+smoke+"&"+"space="+space+"&pet="+pet+"&gender="+gender;
+                    alert("Sending: "+theData);
+                    
+                    var theUrl="http://localhost:8080/myapp/resources/w2/filterCreate";
+                    
+                    $.ajax({
+                        url:theUrl,
+                        type:"POST",
+                        dataType:"text",
+                        contentType:"application/x-www-form-urlencoded",
+                        data: theData,
+                        
+                        
+                        success:
+                            function(result,status,jqxhr){
+                            alert("Success: "+status);
+                            
+                            var ingArray=JSON.parse(result);
+                            alert(ingArray);
+                            var output="<h3>Just added</h3>";
+                            
+                            output+="<ul>";
+                            
+                            for(var i=0; i<ingArray.length; i++){
+                                    output +="<li>"+ ingArray[i].name+ " ("+ ingArray.id+", "+ingArray[i].category+")"+"</li>"; }
+                                output+="</ul>";
+                                alert(output);
+                                $("#p_createIng").html(output);
+                            
+                            },
+                            
+                            error:
+                                function(xhr, status, errorThrown){
+                                
+                                    alert("error: "+status+" e: "+errorThrown);
+                                    $("#p_createIng").html("Error: "+xhr.status+" "+xhr.statusText);
+                                }
+                    
+                    })
+                    
+                
+                
+                
+                
+                })
+                
+                
+                
+           });  
+            
+        </script>
+        
+    </head> 
+	
+    <body> 
+	
+	<div id="setfiter">
+        <input type="checkbox" id="smoke" class="smk" name="chk_box"
+       value="1" checked /> Do you smoke? </br>
+	   
+        <input type="checkbox" id="space" class="spc" name="chk_box"
+       value="1" checked /> Does your vehicle have space?</br>
+	   
+	   <input type="checkbox" id="pet" class="pt" name="chk_box"
+       value="1"  checked /> Do you ride with, or be willing to ride with pets?</br>
+	 
+	   
+	   
+	   <input type="radio"  name="gender" value="0" checked /> Female
+	   <input type="radio"  name="gender" value="1" /> Male
+	   </br>
+       
+        <button id="btnSetfilter">Click to set the filters</button>
+       
+       
+    </div>
+    
+    
+    </body>
+</html> 
