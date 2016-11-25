@@ -1,0 +1,125 @@
+<html>
+    <head>
+		<meta charset="utf-8">
+        <title>filters</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        
+        <script>
+        $(document).ready( function (){
+          $("#btnGetUser").click(function(){
+		  
+                
+                   	
+					if ($('#' + "smoke").is(":checked")){
+					 
+						var smoke=document.getElementById("smoke").value;}
+						
+					else{
+							var smoke=0;
+					}
+					
+					
+					if ($('#' + "space").is(":checked")){
+					 
+						var space=document.getElementById("space").value;}
+						
+					else{
+							var space=0;
+					}
+					
+					
+					if ($('#' + "pet").is(":checked")){
+					 
+						var pet=document.getElementById("pet").value;}
+						
+					else{
+							var pet=0;
+					}
+					
+				var gender= $(":radio[name=gender]:checked").val();
+                    
+                    
+                    var theData="smoke="+smoke+"&"+"space="+space+"&pet="+pet+"&gender="+gender;
+                  
+                    
+                    var theUrl="http://localhost:8080/myapp/resources/w2/filterUsers";
+					
+                    
+                    $.ajax({
+                        url:theUrl,
+                        type:"POST",
+                        dataType:"text",
+                        contentType:"application/x-www-form-urlencoded",
+                        data: theData,
+                        
+                        
+                        success:
+						
+                            function(result,status,jqxhr){
+							
+                  
+                            
+                            var uArray=JSON.parse(result);
+                          
+                            var output="<h3>Your results</h3>";
+                            
+                            output+="<ul>";
+                            
+                            for(var i=0; i<uArray.length; i++){
+                                    output +="<li><a href= http://localhost:8080/myapp/resources/w2/(profilepage)"+ uArray[i].no +" target='"+"_blank"+"'>"+ uArray[i].no + "</a></li>"; }
+                                output+="</ul>";
+                                
+                                $("#p_show").html(output);
+                            
+                            },
+                            
+                            error:
+                                function(xhr, status, errorThrown){
+                                
+                                    alert("error: "+status+" e: "+errorThrown);
+                                    $("#p_show").html("Error: "+xhr.status+" "+xhr.statusText);
+                                }
+                    
+                    })
+                    
+                
+                
+                
+                
+                })
+                
+                
+                
+           });       
+            
+        </script>
+        
+    </head> 
+	
+    <body>
+	
+	
+    <div id="setfiter2">
+		
+        <input type="checkbox" id="smoke" name="chk_box2"
+       value="1" /> Do you smoke? </br>
+	  
+        <input type="checkbox" id="space" name="chk_box2"
+       value="1" /> Does your vehicle have space?</br>
+	   
+	   <input type="checkbox" id="pet" name="chk_box2"
+       value="1" /> Do you ride with, or be willing to ride with pets?</br>
+	 
+	   
+	   <input type="radio" id="gender" name="gender" value="1" /> Male
+	   <input type="radio" id="gender" name="gender" value="0" checked="checked" /> Female</br>
+       
+        <button id="btnGetUser">Click to search for users</button>
+       
+       
+    </div>
+	
+	<div><p id="p_show"></p></div>
+    
+    </body>
+</html> 
