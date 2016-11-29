@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+//The sign in part for driver
 public class DriverRegister {
 public static void registDriver(Driver d){
         
@@ -20,7 +20,7 @@ public static void registDriver(Driver d){
         String sql = "Insert Into diver values(?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement pst = null;
          
-        //ÅĞ¶ÏµÇÂ½ÃûÊÇ·ñÒÑ¾­´æÔÚ
+        
         Statement s = null;
         ResultSet rs = null;
         String sql_ck = "Select uName FROM driver";
@@ -38,10 +38,10 @@ public static void registDriver(Driver d){
             pst.setString(9, d.getcarMake());
             pst.setInt(10, d.getpet());
             pst.setInt(10, d.getcargo());
-            //ÅĞ¶ÏµÇÂ½ÃûÊÇ·ñÒÑ¾­´æÔÚ
+            //check whether the username is existed
             s = conn.createStatement();
             rs = s.executeQuery(sql_ck);
-            while(rs.next()){//ÎªÊ²Ã´ÓÃ rs.getString(2)»áÌáÊ¾ ÎŞĞ§µÄË÷ÒıÄØ
+            while(rs.next()){//ä¸ºä»€ä¹ˆç”¨ rs.getString(2)ä¼šæç¤º æ— æ•ˆçš„ç´¢å¼•å‘¢
                 if( rs.getString("uName").equals(p.getuName()) ){
                     System.out.println("The username is existed. Please change another one");
                     break;
