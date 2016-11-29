@@ -5,15 +5,15 @@ create database rideShare;
 use rideShare;
 
 create table driver (
-uName varchar (50) not null unique, 
-fName varchar (50) not null,
-lName varchar (50) not null,
-smoker boolean not null, 
-gender binary not null,
-email email not null.
-password password not null.
-carColor varchar (20) not null,
-carMake varchar (50) not null,
+uName varchar (50) NOT NULL unique, 
+fName varchar (50) NOT NULL,
+lName varchar (50) NOT NULL,
+smoker boolean NOT NULL, 
+gender binary NOT NULL,
+email varchar (50) NOT NULL,
+password varchar (50) NOT NULL,
+carColor varchar (20) NOT NULL,
+carMake varchar (50) NOT NULL,
 pet binary,
 cargo binary,
 
@@ -26,8 +26,8 @@ fName varchar (50) not null,
 lName varchar (50) not null,
 smoker boolean, 
 gender binary not null,
-email email not null.
-password password not null.
+email varchar (50) not null,
+password varchar (50) not null,
 
 primary key(uName)
 );
