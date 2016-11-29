@@ -1,7 +1,7 @@
 import java.util.Scanner;
-
+//the interface for passenger sign in and log in 
 public class PassengerSignIn {
-	//the interface for passenger sign in and log in 
+	//log in
 	public static Passenger getPassenger(){
 		
         Passenger p = new Passenger();
@@ -13,7 +13,7 @@ public class PassengerSignIn {
         p.status=true;
         return  p;
     }
-	//×¢²á
+	//sign in
     public static Passenger registerPassenger(){
     	Passenger p = new Passenger();
     	 Scanner sc = new Scanner(System.in);
