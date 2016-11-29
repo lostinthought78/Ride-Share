@@ -1,8 +1,8 @@
 import java.util.Scanner;
-
+//The interface for login and sign in for driver
 public class DriverSignIn {
 public static Driver getDriver(){
-		
+	//log in	
         Driver d = new Driver();
         Scanner sc = new Scanner(System.in);
         System.out.println("Please type in username");
@@ -12,7 +12,7 @@ public static Driver getDriver(){
         d.status=1;
         return  d;
     }
-	//зЂВс
+	//sign in 
     public static Driver registerDriver(){
     	Driver d = new Driver();
     	 Scanner sc = new Scanner(System.in);
