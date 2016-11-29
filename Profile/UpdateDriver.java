@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
+// for driver to update its information
 public class UpdateDriver {
 	
 	
