@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+// the sign in part for passenger 
 public class PassengerRegister {
 	public static void registPassenger(Passenger p){
         
@@ -20,7 +20,7 @@ public class PassengerRegister {
         String sql = "Insert Into passenger values(?,?,?,?,?,?,?)";
         PreparedStatement pst = null;
          
-        //ÅĞ¶ÏµÇÂ½ÃûÊÇ·ñÒÑ¾­´æÔÚ
+        //Check whether the username is existed
         Statement s = null;
         ResultSet rs = null;
         String sql_ck = "Select uName FROM passenger";
@@ -34,10 +34,10 @@ public class PassengerRegister {
             pst.setInt(5, p.getgender());
             pst.setString(6, p.getemail());
             pst.setString(7, p.getpassword());
-            //ÅĞ¶ÏµÇÂ½ÃûÊÇ·ñÒÑ¾­´æÔÚ
+            
             s = conn.createStatement();
             rs = s.executeQuery(sql_ck);
-            while(rs.next()){//ÎªÊ²Ã´ÓÃ rs.getString(2)»áÌáÊ¾ ÎŞĞ§µÄË÷ÒıÄØ
+            while(rs.next()){//ä¸ºä»€ä¹ˆç”¨ rs.getString(2)ä¼šæç¤º æ— æ•ˆçš„ç´¢å¼•å‘¢
                 if( rs.getString("uName").equals(p.getuName()) ){
                     System.out.println("The username is existed. Please change another one");
                     break;
