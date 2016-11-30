@@ -4,9 +4,9 @@ import com.google.gson.Gson;
 
 //The interface for login and sign in for driver
 public class DriverSignIn {
-public static ArrayList<Driver> getDriver(){
+public static Driver getDriver(){
 	//log in	
-	List<Driver> list = new Arraylist<Driver>();
+	
         Driver d = new Driver();
         Scanner sc = new Scanner(System.in);
         System.out.println("Please type in username");
@@ -14,14 +14,20 @@ public static ArrayList<Driver> getDriver(){
         System.out.println("Please type in password");
         d.setpassword(sc.nextLine());
         d.status=1;
+	
+	ArrayList<String> list = new ArrayList<String>();
+        list.add(d.getuName());
+	list.add(d.getpassword());
+	
+	
         rGSON theGsonObj = new GSON();
 	result = theGSONObj.toGSON(list);
-
+	
         return  result;
     }
 	//sign in 
-    public static ArrayList<Driver> registerDriver(){
-	List<Driver> list = new Arraylist<Driver>();
+    public static Driver registerDriver(){
+	
     	Driver d = new Driver();
     	 Scanner sc = new Scanner(System.in);
          System.out.println("Please type in username");
@@ -46,6 +52,21 @@ public static ArrayList<Driver> getDriver(){
          d.setpet(sc.nextInt());
          System.out.println("Please type in the rest of your seat");
          d.setcargo(sc.nextInt());
+	    
+	    
+	    
+	ArrayList<String> list = new ArrayList<String>();
+        list.add(d.getuName());
+	list.add(d.getfName());
+	list.add(d.getlName());
+	list.add(d.getsmoker());
+	list.add(d.getgender());
+	list.add(d.getemail());
+       	list.add(d.getpassword());
+	list.add(d.getcarColor());
+	list.add(d.getcarMake());
+	 list.add(d.getcargo());
+	 list.add(d.getemail());
          rGSON theGsonObj = new GSON();
 	result = theGSONObj.toGSON(list);
          return result;
