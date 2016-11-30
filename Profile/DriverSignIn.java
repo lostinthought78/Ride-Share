@@ -1,97 +1,53 @@
 import java.util.Scanner;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.QueryParam;
-
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.core.MultivaluedMap;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.ResponseBuilder;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.PreparedStatement;
-
-import java.util.Arrays;
 import java.util.ArrayList;
-import com.google.gson.Gson;
-import javax.naming.*;
+import com.google.gson.Gson; 
 
-@Path("ws2")
-//the interface for passenger sign in and log in 
-public class PassengerIn {
-	@Path()
-	@POST
-	@Produces()
-	@Consumes()
-	//log in
-	public static Driver getDriver(){
-		public createSignIn(MultivaluedMap<String,String> formFields) throws SQLException, ClassNotFoundException, NamingException{
-			String uName=formFields.getFirst("uName");
-			String password=formFields.getFirst("password");
-			Driver d = new Driver();
-			DriverIn dIn = DriverIn.getinstance();
-			Driver[] resultArray= iFacade.CreatePassenger(d);
-    	
-			if(resultArray !=null){
-	            Gson theGsonObj=new Gson();
-	            
-	            String result=theGsonObj.toJson(resultArray);
-	            
-	            ResponseBuilder rb= Response.ok(result, MediaType.TEXT_PLAIN);
-	            rb.status(200);
-	            
-	            return rb.build();
-	          
-	          }
-	          else{
-	            return Response.status(700).build();
-	          }
-    	
-    		}
-		
-    
-		}
-	//sign in
-    public static Passenger registerPassenger(){
-    		public createSignIn(MultivaluedMap<String,String,String,Boolean,int,String,String> formFields) throws SQLException, ClassNotFoundException, NamingException{
-    			String uName=formFields.getFirst("uName");
-    			String fName=formFields.getFirst("fName");
-    			String lName=formFields.getFirst("lName");
-    			Boolean smoker=formFields.getFirst("smoker");
-    			int gender=formFields.getFirst("gender");
-    			String email=formFields.getFirst("email");
-    			String password=formFields.getFirst("password");
-    			String carColor=formFields.getFirst("carColor");
-    			String carMake=formFields.getFirst("carMake");
-    			int password=formFields.getFirst("pet");
-    			int password=formFields.getFirst("cargo");
-			PDriver d = new Driver();
-			DriverIn dIn = DriverIn.getinstance();
-			Driver[] resultArray= iFacade.CreatePassenger(d);
-    	
-			if(resultArray !=null){
-	            Gson theGsonObj=new Gson();
-	            
-	            String result=theGsonObj.toJson(resultArray);
-	            
-	            ResponseBuilder rb= Response.ok(result, MediaType.TEXT_PLAIN);
-	            rb.status(200);
-	            
-	            return rb.build();
-	          
-	          }
-	          else{
-	            return Response.status(700).build();
-	          }
-    	
-    		}
+//The interface for login and sign in for driver
+public class DriverSignIn {
+public static ArrayList<Driver> getDriver(){
+	//log in	
+	List<Driver> list = new Arraylist<Driver>();
+        Driver d = new Driver();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please type in username");
+        d.setuName(sc.nextLine());
+        System.out.println("Please type in password");
+        d.setpassword(sc.nextLine());
+        d.status=1;
+        rGSON theGsonObj = new GSON();
+	result = theGSONObj.toGSON(list);
+
+        return  result;
     }
+	//sign in 
+    public static ArrayList<Driver> registerDriver(){
+	List<Driver> list = new Arraylist<Driver>();
+    	Driver d = new Driver();
+    	 Scanner sc = new Scanner(System.in);
+         System.out.println("Please type in username");
+         d.setuName(sc.nextLine());
+         System.out.println("Please type in firstname");
+         d.setfName(sc.nextLine());
+         System.out.println("Please type in lastname");
+         d.setlName(sc.nextLine());
+         System.out.println("Are you a smoker? (true/false)");
+         d.setsmoker(sc.nextBoolean());
+         System.out.println("Please type in your gender");
+         d.setgender(sc.nextInt());
+         System.out.println("Please type in email");
+         d.setemail(sc.nextLine());
+         System.out.println("Please type in password");
+         d.setpassword(sc.nextLine());
+         System.out.println("Please type in your car's color");
+         d.setcarColor(sc.nextLine());
+         System.out.println("Please type in your car's type");
+         d.setcarMake(sc.nextLine());
+         System.out.println("Do you have pet (Yes or no)");
+         d.setpet(sc.nextInt());
+         System.out.println("Please type in the rest of your seat");
+         d.setcargo(sc.nextInt());
+         rGSON theGsonObj = new GSON();
+	result = theGSONObj.toGSON(list);
+         return result;
+         }
 }
