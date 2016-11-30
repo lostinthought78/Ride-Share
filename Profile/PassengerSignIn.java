@@ -69,7 +69,7 @@ public class PassengerIn {
 			int gender=formFields.getFirst("gender");
 			String email=formFields.getFirst("email");
 			String password=formFields.getFirst("password");
-			Passenger p = new Passenger(uName,fName,lName,smoker,gender,email,password);
+			Passenger p = new Passenger();
 			PassengerIn pIn = PassengerIn.getinstance();
 			Passenger[] resultArray= iFacade.CreatePassenger(p);
     	
