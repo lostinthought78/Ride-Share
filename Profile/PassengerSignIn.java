@@ -5,7 +5,7 @@ import com.google.gson.Gson;
 //the interface for passenger sign in and log in 
 public class PassengerSignIn {
 	//log in
-	public static ArrayList<Passenger> getPassenger(){
+	public static Passenger getPassenger(){
 	
 	List<Passenger> list = new Arraylist<Passenger>();	
         Passenger p = new Passenger();
@@ -16,15 +16,19 @@ public class PassengerSignIn {
         p.setpassword(sc.nextLine());
         p.status=true;
 	
+	ArrayList<String> list = new ArrayList<String>();
+        list.add(p.getuName());
+       	list.add(p.getpassword());
+		
 	GSON theGsonObj = new GSON();
 	result = theGSONObj.toGSON(list);
 
         return  result;
     }
 	//sign in
-    public static ArrayList<Passenger> registerPassenger(){
+    public static Passenger registerPassenger(){
 	
-	List<Passenger> list = new Arraylist<Passenger>();
+	
     	Passenger p = new Passenger();
     	 Scanner sc = new Scanner(System.in);
          System.out.println("Please type in username");
@@ -42,6 +46,14 @@ public class PassengerSignIn {
          System.out.println("Please type in password");
          p.setpassword(sc.nextLine());
 
+	ArrayList<String> list = new ArrayList<String>();
+        list.add(p.getuName());
+	list.add(p.getfName());
+	list.add(p.getlName());
+	list.add(p.getsmoker());
+	list.add(p.getgender());
+	list.add(p.getemail());
+       	list.add(p.getpassword());
 	
          GSON theGsonObj = new GSON();
 	result = theGSONObj.toGSON(list);
