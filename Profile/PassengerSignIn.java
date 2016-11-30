@@ -7,7 +7,7 @@ public class PassengerSignIn {
 	//log in
 	public static Passenger getPassenger(){
 	
-	List<Passenger> list = new Arraylist<Passenger>();	
+		
         Passenger p = new Passenger();
         Scanner sc = new Scanner(System.in);
         System.out.println("Please type in username");
